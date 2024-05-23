@@ -9,16 +9,16 @@ import Twitter from "@/components/Twitter.astro";
 import Datafiscal from "@/components/Datafiscal.astro";
 ---
 
-<footer class="grid grid-cols-2 h-auto" ->
+<footer class="grid grid-cols-1 md:grid-cols-2 h-auto" ->
   <div
-    class="flex flex-col gap-2 justify-between items-center place-content-center"
+    class="flex flex-col gap-2 justify-between items-center place-content-center mx-auto md:pr-40"
   >
-    <HeroLogo class="w-80 mx-auto" />
-    <p class="text-center">Potencia en Innovación para tu negocio</p>
-    <p class="text-center w-80 mx-auto">
-      Paraguay 886 - C1057AAL - Capital Federal - Buenos Aires - ARGENTINA
+    <HeroLogo class="w-72 mx-auto" />
+    <p class="text-center w-80">Potencia en Innovación para tu negocio</p>
+    <p class="text-center w-72 md-w-100 mx-auto">
+      Paraguay 886 - C1057AAL - Capital Federal Buenos Aires - ARGENTINA
     </p>
-    <div class="w-100 flex flex-row gap-5 justify-center items-center">
+    <div class="flex flex-row gap-4 md:gap-5 justify-center items-center">
       <a>
         <Instagram />
       </a>
@@ -39,11 +39,9 @@ import Datafiscal from "@/components/Datafiscal.astro";
       </a>
     </div>
   </div>
-  <div
-    class="flex flex-row gap-4 justify-center items-start place-content-center"
-  >
-    <div class="">
-      <ul class="flex flex-col gap-3 text-lg pt-16">
+  <div class="flex flex-col md:flex-row gap-4 justify-center">
+    <div class="mx-auto text-center">
+      <ul class="flex flex-col justify-center gap-3 text-2xl md:text-lg pt-16">
         <strong class="">Compañia</strong>
         <a><li>¿Quienes somos?</li></a>
         <a><li>Trabaja con nosotros</li></a>
@@ -51,8 +49,8 @@ import Datafiscal from "@/components/Datafiscal.astro";
         <a><li>Contacto</li></a>
       </ul>
     </div>
-    <div class="">
-      <ul class="flex flex-col gap-3 text-lg pt-16">
+    <div class="mx-auto text-center">
+      <ul class="flex flex-col justify-center gap-3 text-2xl md:text-lg py-16">
         <strong class="">Accesos Rapidos</strong>
         <a><li>Home</li></a>
         <a><li>Eventos</li></a>
@@ -60,12 +58,12 @@ import Datafiscal from "@/components/Datafiscal.astro";
         <a><li>Cotizá con nosotros</li></a>
       </ul>
     </div>
-    <Datafiscal class="scale-50 flex items-start" />
+    <Datafiscal class="mx-auto md:scale-50" />
   </div>
-  <div class="text-center pt-24">
+  <div class="text-center pt-16 md:pr-40">
     <p>© 2024 All rights reserved. Koala Consulting</p>
   </div>
-  <div class="text-center pt-24">
+  <div class="text-center md:pt-16 mb-16">
     <p>Politicas de privacidad.</p>
   </div>
 </footer>
