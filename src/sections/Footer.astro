@@ -1,0 +1,67 @@
+---
+import HeroLogo from "@/components/HeroLogo.astro";
+import Instagram from "@/components/Instagram.astro";
+import Facebook from "@/components/Facebook.astro";
+import Linkedin from "@/components/Linkedin.astro";
+import Tiktok from "@/components/Tiktok.astro";
+import Youtube from "@/components/Youtube.astro";
+import Twitter from "@/components/Twitter.astro";
+import Datafiscal from "@/components/Datafiscal.astro";
+---
+
+<footer class="grid grid-cols-2 h-auto" ->
+  <div class="w-1/2 flex flex-col gap-2 justify-between">
+    <HeroLogo class="w-80 mx-auto" />
+    <p class="text-center">Potencia en Innovación para tu negocio</p>
+    <p class="text-center w-80 mx-auto">
+      Paraguay 886 - C1057AAL - Capital Federal - Buenos Aires - ARGENTINA
+    </p>
+    <div class="w-100 flex flex-row gap-5 justify-center items-center">
+      <a>
+        <Instagram />
+      </a>
+      <a>
+        <Facebook />
+      </a>
+      <a>
+        <Linkedin />
+      </a>
+      <a>
+        <Tiktok />
+      </a>
+      <a>
+        <Youtube />
+      </a>
+      <a>
+        <Twitter />
+      </a>
+    </div>
+  </div>
+  <div class="w-100 flex flex-row gap-4 justify-center items-start">
+    <div class="">
+      <ul class="flex flex-col gap-3 text-lg pt-16">
+        <strong class="">Compañia</strong>
+        <a><li>¿Quienes somos?</li></a>
+        <a><li>Trabaja con nosotros</li></a>
+        <a><li>Socios</li></a>
+        <a><li>Contacto</li></a>
+      </ul>
+    </div>
+    <div class="">
+      <ul class="flex flex-col gap-3 text-lg pt-16">
+        <strong class="">Accesos Rapidos</strong>
+        <a><li>Home</li></a>
+        <a><li>Eventos</li></a>
+        <a><li>Preguntas Frecuentes</li></a>
+        <a><li>Cotizá con nosotros</li></a>
+      </ul>
+    </div>
+    <Datafiscal class="scale-50 flex items-start" />
+  </div>
+  <div class="w-100 flex flex-row justify-start item-center pt-24">
+    <p>© 2024 All rights reserved. Koala Consulting</p>
+  </div>
+  <div class="w-100 flex flex-row justify-end item-center pt-24">
+    <p>Politicas de privacidad.</p>
+  </div>
+</footer>

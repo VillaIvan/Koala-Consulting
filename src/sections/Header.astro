@@ -1,0 +1,25 @@
+---
+import HeroLogo from "@/components/HeroLogo.astro";
+---
+
+<nav
+  class="flex flex-col md:flex-row md:justify-between
+items-center pb-20 md:px-5"
+>
+  <a>
+    <HeroLogo class="w-56" />
+  </a>
+  <div class="pt-16 md:pt-0 text-center flex flex-row justify-center">
+    <ul class="flex gap-8 text-lg">
+      <li class="text-oscure hover:text-primary">
+        <a href="/">Servicios</a>
+      </li>
+      <li class="text-oscure hover:text-primary">
+        <a href="/">Nosotros</a>
+      </li>
+      <li class="text-oscure hover:text-primary">
+        <a href="/">Contacto</a>
+      </li>
+    </ul>
+  </div>
+</nav>
