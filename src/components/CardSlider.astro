@@ -1,0 +1,153 @@
+<div class="wrapper mb-24">
+  <div class="container">
+    <input type="radio" name="slide" id="c1" checked />
+    <label for="c1" class="card">
+      <div class="row">
+        <div class="icon">1</div>
+        <div class="description">
+          <h4 class="font-black text-2xl">Winter</h4>
+          <p class="font-medium text-lg">
+            Winter has so much to offer - creative activities
+          </p>
+        </div>
+      </div>
+    </label>
+
+    <input type="radio" name="slide" id="c2" />
+    <label for="c2" class="card">
+      <div class="row">
+        <div class="icon">2</div>
+        <div class="description">
+          <h4 class="font-black text-lg">Digital Technology</h4>
+          <p class="font-medium text-lg">Gets better every day - stay tuned</p>
+        </div>
+      </div>
+    </label>
+
+    <input type="radio" name="slide" id="c3" />
+    <label for="c3" class="card">
+      <div class="row">
+        <div class="icon">3</div>
+        <div class="description">
+          <h4 class="font-black text-lg">Globalization</h4>
+          <p class="font-medium text-lg">Help people all over the world</p>
+        </div>
+      </div>
+    </label>
+
+    <input type="radio" name="slide" id="c4" />
+    <label for="c4" class="card">
+      <div class="row">
+        <div class="icon">4</div>
+        <div class="description">
+          <h4 class="font-black text-lg">New technologies</h4>
+          <p class="font-medium text-lg">
+            Space engineering becomes more and more advanced
+          </p>
+        </div>
+      </div>
+    </label>
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center; /* Centra las tarjetas */
+    align-items: flex-start; /* Alinea las tarjetas en la parte superior */
+    gap: 10px; /* Espacio entre tarjetas */
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+    width: 80px;
+    height: 400px; /* Asegura que las tarjetas mantengan su altura */
+    margin: 0 10px; /* Ajusta el margen horizontal de las tarjetas */
+  }
+
+  .card > .row {
+    color: #1a1a1a;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .card > .row > .icon {
+    align-items: center;
+    background: #0281de;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    width: 50px;
+    height: 50px; /* Asegura que el icono mantenga su altura */
+  }
+
+  .card > .row > .description {
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Permite que la descripción tome el espacio necesario */
+    justify-content: center;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(30px);
+    transition: all 0.3s ease;
+    transition-delay: 0.3s;
+    width: 520px;
+  }
+
+  .description p {
+    color: #b0b0ba;
+    padding-top: 5px;
+  }
+
+  .description h4 {
+    text-transform: uppercase;
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked + label {
+    width: 600px;
+  }
+
+  input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  label[for="c1"] {
+    background-image: url("https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  }
+
+  label[for="c2"] {
+    background-image: url("https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  }
+
+  label[for="c3"] {
+    background-image: url("https://images.pexels.com/photos/7731327/pexels-photo-7731327.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  }
+
+  label[for="c4"] {
+    background-image: url("https://images.pexels.com/photos/8439654/pexels-photo-8439654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  }
+</style>

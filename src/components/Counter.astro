@@ -1,0 +1,42 @@
+---
+import CounterUp from "./CounterUp.astro";
+---
+
+<section
+  class="flex flex-col gap-10 md:gap-4 md:flex-row justify-around items-center mt-20 md:mt-0"
+>
+  <div class="w-72 border text-center bg-white py-8 px-6 rounded-lg sm:px-10">
+    <CounterUp dataVal="100" text="Clientes satisfechos" />
+  </div>
+  <div class="w-72 border text-center bg-white py-8 px-6 rounded-lg sm:px-10">
+    <CounterUp dataVal="25" text="Premios" />
+  </div>
+  <div class="w-72 border text-center bg-white py-8 px-6 rounded-lg sm:px-10">
+    <CounterUp dataVal="600" text="Proyectos" />
+  </div>
+  <script>
+    let valueDisplays = document.querySelectorAll(".num");
+    let interval = 10000;
+
+    valueDisplays.forEach((valueDisplay) => {
+      let startValue = 0;
+      let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+      if (isNaN(endValue)) {
+        console.error(
+          "El atributo data-val no es un número válido:",
+          valueDisplay
+        );
+        return;
+      }
+      let duration = Math.floor(interval / endValue);
+
+      let counter = setInterval(() => {
+        startValue += 1;
+        valueDisplay.textContent = "+" + startValue.toString();
+        if (startValue === endValue) {
+          clearInterval(counter);
+        }
+      }, duration);
+    });
+  </script>
+</section>
