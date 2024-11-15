@@ -9,9 +9,12 @@ import Twitter from "@/components/Twitter.astro";
 import Datafiscal from "@/components/Datafiscal.astro";
 ---
 
-<footer class="grid grid-cols-1 md:grid-cols-2 h-auto" ->
+<footer
+  class="grid grid-cols-1 md:grid-cols-2 h-auto max-w-7xl mx-auto text-white"
+  -
+>
   <div
-    class="flex flex-col gap-2 justify-between items-center place-content-center mx-auto md:pr-40"
+    class="flex flex-col gap-2 justify-start md:justify-between items-center place-content-center md:pr-40"
   >
     <HeroLogo class="w-72 mx-auto" />
     <p class="text-center w-80">Potencia en Innovación para tu negocio</p>
@@ -60,10 +63,7 @@ import Datafiscal from "@/components/Datafiscal.astro";
     </div>
     <Datafiscal class="mx-auto md:scale-50" />
   </div>
-  <div class="text-center pt-16 md:pr-40">
-    <p>© 2024 All rights reserved. Koala Consulting</p>
-  </div>
-  <div class="text-center md:pt-16 mb-16">
-    <p>Politicas de privacidad.</p>
-  </div>
 </footer>
+<div class="text-center py-8 w-full text-white">
+  <p>© 2024 All rights reserved. Koala Consulting</p>
+</div>

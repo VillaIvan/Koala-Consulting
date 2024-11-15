@@ -18,7 +18,7 @@ import Footer from "@/sections/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class="max-w-7xl px-10 pt-5 mx-auto">
+  <body class="pt-5 mx-auto">
     <Header />
     <slot />
     <Footer />
@@ -27,7 +27,11 @@ import Footer from "@/sections/Footer.astro";
 <style is:global>
   html {
     font-family: "Urbanist Variable", sans-serif;
-    background: #fafafa;
-    background-size: 224px;
+    background: rgb(2, 129, 222);
+    background: linear-gradient(
+      45deg,
+      rgba(2, 129, 222, 1) 30%,
+      rgba(56, 198, 184, 1) 100%
+    );
   }
 </style>

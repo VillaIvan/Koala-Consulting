@@ -2,139 +2,114 @@
 
 ---
 
-<div class="md:mt-8 mx-auto sm:w-full sm:max-w-md md:mb-10 border rounded-lg">
+<div
+  class="mx-auto w-full sm:w-[550px] md:mb-10 border rounded-lg h-auto hover:shadow-xl"
+>
   <div class="bg-white py-8 px-6 rounded-lg sm:px-10">
-    <h1 class="text-center font-bold text-oscure text-3xl p-5">
-      Contactá un asesor
+    <h1 class="text-center font-semibold text-oscure text-4xl md:text-5xl p-5">
+      Contactános
     </h1>
     <form
       class="md:grid md:grid-cols-2 flex flex-col gap-4 mb-0"
       action="#"
       method="POST"
     >
-      <div class="">
-        <label for="name" class="block text-sm font-medium text-oscure"
-          >Nombre</label
-        >
-        <div class="mt-1">
-          <input
-            id="name"
-            name="name"
-            type="text"
-            autocomplete="name"
-            required
-            class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
-          />
-        </div>
+      <div class="mt-1">
+        <input
+          id="name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          required
+          class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
+          placeholder="Nombre"
+        />
       </div>
-      <div class="">
-        <label for="text" class="block text-sm font-medium text-oscure"
-          >Apellido</label
-        >
-        <div class="mt-1">
-          <input
-            id="surname"
-            name="surname"
-            type="text"
-            autocomplete=""
-            required
-            class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
-          />
-        </div>
+
+      <div class="mt-1">
+        <input
+          id="surname"
+          name="surname"
+          type="text"
+          autocomplete=""
+          required
+          class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
+          placeholder="Apellido"
+        />
       </div>
-      <div class="">
-        <label for="email" class="block text-sm font-medium text-oscure"
-          >Correo Electronico</label
-        >
-        <div class="mt-1">
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            required
-            class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
-          />
-        </div>
+
+      <div class="mt-1">
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
+          placeholder="Email"
+        />
+      </div>
+
+      <div class="mt-1">
+        <input
+          id="phone"
+          name="phone"
+          type="text"
+          autocomplete=""
+          required
+          class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
+          placeholder="Telefono"
+        />
       </div>
       <div class="mt-1">
-        <div>
-          <label for="number" class="block text-sm font-medium text-oscure"
-            >Numero de Contacto</label
-          >
-          <input
-            id="phone"
-            name="phone"
-            type="text"
-            autocomplete=""
-            required
-            class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
-          />
-        </div>
+        <input
+          id="employ"
+          name="employ"
+          type="text"
+          autocomplete=""
+          required
+          class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
+          placeholder="Empleo"
+        />
       </div>
       <div class="mt-1">
-        <div>
-          <label for="text" class="block text-sm font-medium text-oscure"
-            >Cargo</label
-          >
-          <input
-            id="employ"
-            name="employ"
-            type="text"
-            autocomplete=""
-            required
-            class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
-          />
-        </div>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          autocomplete=""
+          required
+          class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
+          placeholder="Compañia"
+        />
       </div>
       <div class="mt-1">
-        <div>
-          <label for="text" class="block text-sm font-medium text-oscure"
-            >Compañia</label
-          >
-          <input
-            id="company"
-            name="company"
-            type="text"
-            autocomplete=""
-            required
-            class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
-          />
-        </div>
+        <input
+          id="city"
+          name="city"
+          type="text"
+          autocomplete=""
+          required
+          class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
+          placeholder="Ciudad"
+        />
       </div>
       <div class="mt-1">
-        <div>
-          <label for="text" class="block text-sm font-medium text-oscure"
-            >Ciudad</label
-          >
-          <input
-            id="city"
-            name="city"
-            type="text"
-            autocomplete=""
-            required
-            class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
-          />
-        </div>
-      </div>
-      <div class="mt-1">
-        <div>
-          <label for="text" class="block text-sm font-medium text-oscure"
-            >Pais</label
-          >
-          <input
-            id="country"
-            name="country"
-            type="text"
-            autocomplete=""
-            required
-            class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
-          />
-        </div>
+        <input
+          id="country"
+          name="country"
+          type="text"
+          autocomplete=""
+          required
+          class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-secondary"
+          placeholder="Pais"
+        />
       </div>
       <div class="mt-1 col-span-2">
         <div>
-          <label for="text" class="block text-sm font-medium text-oscure"
+          <label
+            for="text"
+            class="block text-md font-medium text-oscure opacity-50"
             >¿Como podemos ayudarte?</label
           >
           <input
