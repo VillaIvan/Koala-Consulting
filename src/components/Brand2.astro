@@ -2,7 +2,7 @@
 import K from "./K.astro";
 ---
 
-<div class="bg-primary py-6 max-w-full mx-auto shadow-xl my-20">
+<div class="bg-secondary py-6 max-w-full mx-auto shadow-xl my-20">
   <div class="slide-track">
     <div class="slide">
       <div class="content">
@@ -260,7 +260,7 @@ import K from "./K.astro";
 <style>
   .slide {
     min-width: 200px; /* Asegúrate de que los slides tengan un ancho mínimo */
-    animation: scroll 360s linear infinite;
+    animation: scroll2 360s linear infinite;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -283,12 +283,12 @@ import K from "./K.astro";
     color: #fff;
   }
 
-  @keyframes scroll {
+  @keyframes scroll2 {
     0% {
-      transform: translateX(200%);
+      transform: translateX(-4300%);
     }
     100% {
-      transform: translatex(-6000%);
+      transform: translatex(200%);
     }
   }
 </style>
