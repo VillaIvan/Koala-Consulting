@@ -7,6 +7,7 @@ interface Props {
 const { title } = Astro.props;
 import Header from "@/sections/Header.astro";
 import Footer from "@/sections/Footer.astro";
+import Wsp from "@/components/Wsp.astro";
 ---
 
 <!doctype html>
@@ -22,6 +23,7 @@ import Footer from "@/sections/Footer.astro";
     <Header />
     <slot />
     <Footer />
+    <Wsp />
   </body>
 </html>
 <style is:global>

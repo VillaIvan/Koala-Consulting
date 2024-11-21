@@ -23,7 +23,7 @@ import Brand from "@/components/Brand.astro";
         border duration-200 ease-in-out
         border-secondary transition"
     >
-      <button> Conocer Mas ➡ </button>
+      <a id="contact-button2" href="#contact"> Conocer Mas ➡ </a>
     </div>
   </div>
   <div class="flex justify-center items-center w-full">
@@ -33,3 +33,12 @@ import Brand from "@/components/Brand.astro";
   </div>
 </section>
 <Brand />
+
+<script>
+  document
+    .getElementById("contact-button2")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    });
+</script>

@@ -1,4 +1,8 @@
-<div class="p-10 md:p-5 mx-auto max-w-7xl my-20">
+<form
+  action="https://formsubmit.co/your@email.com"
+  method="POST"
+  class="p-10 md:p-5 mx-auto max-w-7xl my-20"
+>
   <div class="mt-2">
     <div class="flex flex-col md:flex-row pb-4 mb-4">
       <div class="w-64 font-bold h-6 mx-2 mt-3 text-white text-2xl">
@@ -8,6 +12,11 @@
         <div class="w-full flex-1 mx-2">
           <div class="my-2 p-1 bg-white flex rounded">
             <input
+              id="name"
+              name="Nombre"
+              type="text"
+              autocomplete="name"
+              required
               placeholder="Nombre"
               class="p-1 px-2 w-full text-gray-800 appearance-none outline-none"
             />
@@ -16,6 +25,11 @@
         <div class="w-full flex-1 mx-2">
           <div class="my-2 p-1 bg-white flex border border-gray-200 rounded">
             <input
+              id="surname"
+              name="Apellido"
+              type="text"
+              autocomplete=""
+              required
               placeholder="Apellido"
               class="p-1 px-2 w-full text-gray-800 appearance-none outline-none"
             />
@@ -30,6 +44,9 @@
       <div class="flex-1">
         <div class="flex flex-col md:flex-row">
           <select
+            name="motivo"
+            id="motivo-select"
+            required
             class="mx-2 flex-1 h-10 my-2 form-select w-full p-3 md:p-2 rounded-md outline-none"
           >
             <option value="">--Elija una Opción--</option>
@@ -40,7 +57,12 @@
           <div class="w-full flex-1 mx-2">
             <div class="my-2 p-1 bg-white flex border border-gray-200 rounded">
               <input
-                placeholder="Telefono"
+                id="email"
+                name="Correo Electronico"
+                type="email"
+                autocomplete="email"
+                required
+                placeholder="Email"
                 class="p-1 px-2 appearance-none outline-none w-full text-gray-800"
               />
             </div>
@@ -48,6 +70,11 @@
           <div class="w-full flex-1 mx-2">
             <div class="my-2 p-1 bg-white flex border border-gray-200 rounded">
               <input
+                id="city"
+                name="Localidad"
+                type="text"
+                autocomplete=""
+                required
                 placeholder="Ciudad"
                 class="p-1 px-2 appearance-none outline-none w-full text-gray-800"
               />
@@ -58,6 +85,9 @@
         <div class="w-full flex-1 mx-2">
           <div class="my-2 p-1 bg-white flex border border-gray-200 rounded">
             <input
+              name="Mensaje"
+              id="message"
+              required="message"
               placeholder="¿Cómo podemos ayudarte?"
               class="p-1 px-2 appearance-none outline-none w-full text-gray-800"
             />
@@ -69,6 +99,7 @@
       <div class="w-64 mx-2 font-bold h-6 mt-3 text-gray-800"></div>
       <div class="flex-1 flex flex-col md:flex-row">
         <button
+          type="submit"
           class="text-lg mx-auto md:mx-2 w-48 md:w-32 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer
           hover:bg-secondary hover:text-white
           bg-teal-100
@@ -81,4 +112,11 @@
       </div>
     </div>
   </div>
-</div>
+  <!-- <input
+    type="hidden"
+    name="_next"
+    value="https://www.koalaconsulting.com.ar/"
+  /> -->
+  <input type="hidden" name="_subject" id="formSubject" value="" />
+  <input type="hidden" name="_captcha" value="false" />
+</form>

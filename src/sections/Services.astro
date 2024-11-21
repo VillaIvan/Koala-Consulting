@@ -4,7 +4,7 @@ import Brand2 from "@/components/Brand2.astro";
 import TabNavigation from "@/components/TabNavigation.astro";
 ---
 
-<section class="h-auto md:h-[100vh] mx-auto max-w-7xl p-4">
+<section class="h-auto md:h-[100vh] mx-auto max-w-7xl p-4" id="servicios">
   <div class="grid grid-cols-1 md:grid-cols-2 mb-10">
     <div>
       <img
@@ -79,10 +79,19 @@ import TabNavigation from "@/components/TabNavigation.astro";
         border duration-200 ease-in-out
         border-secondary transition"
       >
-        <button> Conocer Mas ➡ </button>
+        <a id="contact-button3" href="#contact"> Conocer Mas ➡ </a>
       </div>
     </div>
   </div>
   <TabNavigation />
 </section>
 <Brand2 />
+
+<script>
+  document
+    .getElementById("contact-button3")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    });
+</script>

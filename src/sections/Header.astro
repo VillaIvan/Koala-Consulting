@@ -3,23 +3,102 @@ import HeroLogo from "@/components/HeroLogo.astro";
 ---
 
 <nav
-  class="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between
-items-center"
+  class="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between items-center p-4"
 >
-  <a href="/">
+  <a href="/" class="flex items-center">
     <HeroLogo class="w-56" />
   </a>
-  <div class="pt-16 md:pt-0 text-center flex flex-row justify-center">
-    <ul class="flex gap-8 text-lg">
-      <li class="text-white hover:text-primary font-bold p-2">
-        <a href="/">Servicios</a>
+
+  <button
+    id="menu-toggle"
+    class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg md:hidden hover:bg-primary focus:outline-none focus:ring-2 focus:ring-gray-200 mt-10"
+    aria-controls="navbar-default"
+    aria-expanded="false"
+  >
+    <span class="sr-only">Abrir menú</span>
+    <svg
+      class="w-5 h-5 text-white"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 17 14"
+      aria-hidden="true"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M1 1h15M1 7h15M1 13h15"></path>
+    </svg>
+  </button>
+
+  <div
+    id="navbar-default"
+    class="hidden w-full md:block md:w-auto mt-4 md:mt-0"
+  >
+    <ul
+      class="flex flex-col p-4 md:p-0 md:bg-transparent md:flex-row items-center gap-8 md:gap-4 text-white text-lg rounded-lg"
+    >
+      <li class="hover:text-primary font-bold">
+        <a id="servicios-button" href="#servicios">Servicios</a>
       </li>
-      <li class="text-white hover:text-primary font-bold p-2">
-        <a href="/">Nosotros</a>
+      <li class="hover:text-primary font-bold">
+        <a id="nosotros-button" href="#nosotros">Nosotros</a>
       </li>
-      <li class="text-white hover:text-primary font-bold p-2">
-        <a href="/">Contacto</a>
+      <li class="hover:text-primary font-bold">
+        <a
+          id="contact-button"
+          class="py-2 px-4 bg-primary text-white hover:bg-white hover:text-primary rounded-xl shadow-lg text-xl font-semibold cursor-pointer
+         duration-200 ease-in-out
+         transition"
+          href="#contact"
+        >
+          Contáctanos
+        </a>
       </li>
     </ul>
   </div>
 </nav>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navList = document.getElementById("navbar-default");
+  const menuLinks = navList.querySelectorAll("a");
+
+  // Alternar visibilidad del menú en mobile
+  menuToggle.addEventListener("click", () => {
+    navList.classList.toggle("hidden");
+  });
+
+  // Cerrar el menú al hacer clic en un enlace
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth < 768) {
+        navList.classList.add("hidden");
+      }
+    });
+  });
+
+  document
+    .getElementById("contact-button")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    });
+  document
+    .getElementById("servicios-button")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      document
+        .getElementById("servicios")
+        .scrollIntoView({ behavior: "smooth" });
+    });
+  document
+    .getElementById("nosotros-button")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      document
+        .getElementById("nosotros")
+        .scrollIntoView({ behavior: "smooth" });
+    });
+</script>
