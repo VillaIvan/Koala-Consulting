@@ -4,14 +4,16 @@ import Brand from "@/components/Brand.astro";
 ---
 
 <section
-  class="grid grid-cols-1 lg:grid-cols-2 mx-auto h-auto md:h-[79vh] max-w-7xl px-10"
+  class="grid grid-cols-1 lg:grid-cols-2 mx-auto h-auto md:h-[79vh] max-w-7xl px-10 overflow-hidden"
 >
   <div class="flex flex-col justify-center items-center p-3">
-    <h1 class="text-white font-bold text-5xl md:text-6xl text-center">
+    <h1
+      class="text-white font-bold text-5xl md:text-6xl text-center hero-title"
+    >
       Consultores Expertos en Innovación y Desarrollo
     </h1>
 
-    <p class="text-start pt-10 md:pt-5 text-white">
+    <p class="text-start pt-10 md:pt-5 text-white subtitle">
       Conecta datos, procesos y equipos de trabajo con soluciones de negocio que
       generen agilidad operativa y más oportunidades de ventas.
     </p>
@@ -20,14 +22,14 @@ import Brand from "@/components/Brand.astro";
         hover:bg-secondary hover:text-white
         bg-teal-100
         text-primary
-        border duration-200 ease-in-out
-        border-secondary transition"
+        border ease-in-out
+        border-secondary call-to-action"
     >
-      <a id="contact-button2" href="#contact"> Conocer Mas ➡ </a>
+      <a id="contact-button2" href="#nosotros"> Conocer Mas ➡ </a>
     </div>
   </div>
   <div class="flex justify-center items-center w-full">
-    <div class="mx-auto scale-75 md:scale-125">
+    <div class="mx-auto scale-75 md:scale-125 ilus">
       <Ilustracion />
     </div>
   </div>
@@ -35,10 +37,58 @@ import Brand from "@/components/Brand.astro";
 <Brand />
 
 <script>
+  import { gsap } from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  // Registrar el plugin ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Inicializar las animaciones
+  window.addEventListener("load", () => {
+    gsap.from(".hero-title", {
+      opacity: 0,
+      x: 200,
+      duration: 0.5,
+      delay: 0.5,
+      stagger: 0.2,
+    });
+
+    gsap.from(".ilus", {
+      opacity: 0,
+      y: +200,
+      duration: 0.5,
+      delay: 0.5,
+      stagger: 0.2,
+    });
+
+    gsap.from(".subtitle", {
+      opacity: 0,
+      x: 200,
+      duration: 0.5,
+      delay: 0.6,
+      stagger: 0.2,
+    });
+
+    gsap.from(".call-to-action", {
+      opacity: 0,
+      x: 200,
+      duration: 0.5,
+      delay: 0.6,
+      stagger: 0.2,
+    });
+  });
+
   document
     .getElementById("contact-button2")
     .addEventListener("click", function (event) {
       event.preventDefault();
-      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+      document
+        .getElementById("nosotros")
+        .scrollIntoView({ behavior: "smooth" });
     });
 </script>
+
+<style>
+  @media (max-width: 768px) {
+  }
+</style>
