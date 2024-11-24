@@ -1,0 +1,289 @@
+<div class="wrapper-card-coaching">
+  <div class="card-coaching card-01 is-active">
+    <div class="card__heading text-lg sm:text-xl">01. <br /> Relevamiento</div>
+    <div class="card__text">
+      Obtenemos información, mediante la explotación de datos y el relevamiento
+      de procesos.
+    </div>
+  </div>
+  <div class="card-coaching card-02 is-inactive">
+    <div class="card__heading text-lg sm:text-xl">02. <br /> Analisis</div>
+    <div class="card__text">
+      Detectamos oportunidades de mejora y evaluamos el impacto.
+    </div>
+  </div>
+  <div class="card-coaching card-03 is-inactive">
+    <div class="card__heading text-lg sm:text-xl">03. <br /> Diseño</div>
+    <div class="card__text">
+      Proponemos alternativas y alineamos con el cliente.
+    </div>
+  </div>
+  <div class="card-coaching card-04 is-inactive">
+    <div class="card__heading text-md sm:text-xl">
+      04. <br /> Implementación
+    </div>
+    <div class="card__text">Desarrollamos e implementamos soluciones.</div>
+  </div>
+  <div class="card-coaching card-05 is-inactive">
+    <div class="card__heading text-lg sm:text-xl">05. <br /> Seguimiento</div>
+    <div class="card__text">
+      Monitoreamos indicadores claves y evaluamos el impacto de las mejoras.
+    </div>
+  </div>
+</div>
+
+<style>
+  .wrapper-card-coaching {
+    width: 100%;
+    max-width: 750px;
+    min-height: 500px;
+    display: grid;
+    grid-gap: 20px;
+    margin: auto 0;
+    grid-template-columns: repeat(6, 1fr);
+    color: #0281de;
+  }
+
+  .card-coaching {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: white;
+    grid-column: span 3;
+    -webkit-box-shadow: 3px 1px 10px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 3px 1px 10px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 1px 10px 0px rgba(0, 0, 0, 0.2);
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+  }
+  .card-coaching.card-01:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    /* transition: 0.3s;
+  transition-property: opacity, transform;
+  opacity: 0;
+  transform: translateY(10px);
+}
+	.card-coaching.card-01.is-inactive:after {
+  display:none;*/
+  }
+  .card-coaching.card-02:after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 120px;
+
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    /* transition: 0.3s;
+  transition-property: opacity, transform;
+  opacity: 0;
+  transform: translateY(10px);
+}
+.card-coaching.card-02.is-inactive:after {
+  display:none;*/
+  }
+  .card-coaching.card-03:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    /* transition: 0.3s;
+  transition-property: opacity, transform;
+  opacity: 0;
+  transform: translateY(10px);
+}
+.card-coaching.card-03.is-inactive:after {
+  display:none;*/
+  }
+  .card-coaching.card-04:after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    /* transition: 0.3s;
+  transition-property: opacity, transform;
+  opacity: 0;
+  transform: translateY(10px);
+}
+.card-coaching.card-04.is-inactive:after {
+  display:none;*/
+  }
+  .card-coaching.card-05:after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    /* transition: 0.3s;
+  transition-property: opacity, transform;
+  opacity: 0;
+  transform: translateY(10px);
+}
+.card-coaching.card-05.is-inactive:after {
+  display:none;*/
+  }
+
+  .card-coaching.is-active.card-01::after,
+  .card-coaching.is-active.card-02::after,
+  .card-coaching.is-active.card-03::after,
+  .card-coaching.is-active.card-04::after,
+  .card-coaching.is-active.card-05::after {
+    width: 12em;
+    height: 12em;
+  }
+  .card__heading,
+  .card__text {
+    height: auto;
+    width: 100%;
+    border-radius: 4px;
+    /*background-color: var(--background-color);*/
+  }
+
+  .card__heading {
+    font-weight: 700;
+    text-transform: uppercase;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 0.5em;
+  }
+
+  .card__text {
+    margin-top: 10px;
+    font-size: 1.1em;
+    display: none;
+    padding-right: 3em;
+    font-weight: 500;
+  }
+
+  .card-coaching.is-active {
+    grid-row: 1;
+    grid-column: 1 / span 6;
+    height: auto;
+    order: 0;
+    background: #eaeaea;
+  }
+
+  .card-coaching.is-inactive > .card__text {
+    display: none;
+  }
+
+  .card-coaching.is-active > .card__text {
+    color: #1a1a1a;
+    display: block;
+  }
+
+  .card-coaching.is-active:after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .card-flip.is-inactive {
+    grid-column: span 1.5;
+  }
+
+  .card__heading {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card__heading:hover {
+    background: #0281de;
+    color: #fff;
+  }
+
+  .is-active > .card__heading {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .is-active > .card__heading:hover {
+    background: #38c6b8;
+  }
+
+  .is-active > .card__heading {
+    background: #0281de;
+    color: #fff;
+  }
+
+  .is-inactive > .card__heading {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .is-inactive > .card__heading:hover {
+    background: #0281de;
+    color: #fff;
+  }
+
+  .para-txt {
+    display: grid;
+    font-weight: 300;
+    padding: 2em;
+    transition: all 0.3s ease-in-out;
+    border: 1px red solid;
+    position: relative;
+  }
+
+  .card-coaching:nth-child(5) {
+    grid-column: span 6;
+  }
+
+  .card-coaching.is-inactive:nth-child(5) {
+    grid-column: span 3;
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import Flip from "gsap/Flip";
+
+  gsap.registerPlugin(Flip);
+
+  const activeClass = "is-active";
+  const inactiveClass = "is-inactive";
+  const cards = document.querySelectorAll(".card-coaching");
+
+  cards.forEach((card, idx) => {
+    card.addEventListener("click", () => {
+      const state = Flip.getState(cards);
+      const isCardActive = card.classList.contains(activeClass);
+
+      cards.forEach((otherCard, otherIdx) => {
+        otherCard.classList.remove(activeClass);
+        otherCard.classList.remove(inactiveClass);
+        if (!isCardActive && idx !== otherIdx)
+          otherCard.classList.add(inactiveClass);
+      });
+
+      if (!isCardActive) {
+        card.classList.add(activeClass);
+      }
+
+      Flip.from(state, {
+        duration: 1,
+        ease: "expo.out",
+        absolute: true,
+      });
+    });
+  });
+</script>
