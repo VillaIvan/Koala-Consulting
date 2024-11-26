@@ -1,0 +1,213 @@
+---
+import Met2 from "@/components/Met2.astro";
+import TabNavigation from "@/components/TabNavigation.astro";
+import AUSection from "@/components/AUSection.astro";
+import FeatureDiagram from "@/components/FeatureDiagram.astro";
+---
+
+<div class="horizontal-scroll-wrapper">
+  <div class="horizontal-scroll-container">
+    <section class="panel" id="panel-1">
+      <div class="container">
+        <section class="mx-auto max-w-7xl mb-20 p-4" id="nosotros">
+          <div class="p-2">
+            <h3
+              class="text-5xl md:text-6xl text-white font-semibold text-center mb-5"
+            >
+              ¿Quiénes Somos?
+            </h3>
+          </div>
+          <hr class="w-52 mx-auto border-t border-gray-300 mb-5" />
+          <div class="p-2">
+            <p
+              class="text-lg md:text-2xl lg:text-xl text-white font-normal mb-20 lg:mb-10 text-start md:text-center w-[76%] md:w-full mx-auto para"
+            >
+              Somos una empresa líder en consultoría estratégica con una
+              trayectoria de más de 10 años en optimización de procesos en las
+              industrias aseguradoras y tecnológicas. Nos especializamos en
+              identificar oportunidades de mejora y en implementar soluciones
+              que tienen un impacto directo en la eficiencia, el costo
+              operativo, las ventas y la satisfacción del cliente. Nuestro
+              objetivo es impulsar el éxito de su negocio a través de
+              estrategias innovadoras y personalizadas.
+            </p>
+          </div>
+          <AUSection />
+        </section>
+      </div>
+    </section>
+    <section class="panel" id="panel-2">
+      <div class="container">
+        <section
+          class="h-auto md:h-[100vh] max-w-7xl m-auto p-4 flex flex-col justify-center"
+          id="servicios"
+        >
+          <div class="p-2">
+            <h3
+              class="text-5xl md:text-6xl text-white font-semibold text-center mb-5"
+            >
+              ¿Que hacemos?
+            </h3>
+          </div>
+          <hr class="w-52 mx-auto border-t border-gray-300 mb-5" />
+          <TabNavigation />
+        </section>
+      </div>
+    </section>
+    <section class="panel" id="panel-3">
+      <div class="container">
+        <section
+          class="h-auto md:h-[100vh] max-w-7xl m-auto p-4 flex flex-col justify-center"
+          id="servicios"
+        >
+          <div class="p-2">
+            <h3
+              class="text-5xl md:text-6xl text-white font-semibold text-center mb-5"
+            >
+              ¿Como lo hacemos?
+            </h3>
+          </div>
+          <hr class="w-52 mx-auto border-t border-gray-300 mb-5" />
+          <FeatureDiagram />
+        </section>
+      </div>
+    </section>
+  </div>
+</div>
+
+<style>
+  .horizontal-scroll-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .horizontal-scroll-container {
+    display: inline-flex;
+    transition: transform 0.5s ease;
+  }
+
+  .panel {
+    width: 100vw;
+    height: 100vh;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+  }
+
+  @media (max-width: 768px) {
+    .horizontal-scroll-wrapper {
+      overflow-x: scroll;
+      overflow-y: auto;
+    }
+
+    .horizontal-scroll-container {
+      display: block;
+    }
+
+    .panel {
+      width: 100%;
+      height: auto;
+      min-height: 100vh;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+  import ScrollToPlugin from "gsap/ScrollToPlugin";
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  function initSmoothScroll() {
+    const container = document.querySelector(
+      ".horizontal-scroll-container"
+    ) as HTMLElement;
+    const panels = gsap.utils.toArray<HTMLElement>(".panel");
+    const wrapper = document.querySelector(
+      ".horizontal-scroll-wrapper"
+    ) as HTMLElement;
+
+    if (!container || !wrapper || panels.length === 0) {
+      console.warn("Required elements not found.");
+      return;
+    }
+
+    const totalPanelsWidth = panels.reduce(
+      (total, panel) => total + panel.offsetWidth,
+      0
+    );
+
+    gsap.to(container, {
+      x: () => -(totalPanelsWidth - window.innerWidth),
+      ease: "none",
+      scrollTrigger: {
+        trigger: wrapper,
+        pin: true,
+        scrub: 1,
+        end: () => `+=${totalPanelsWidth}`,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    panels.forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: () => "top top-=" + window.innerHeight * i,
+        end: () => "+=" + panel.offsetWidth,
+        toggleClass: { targets: panel, className: "active" },
+      });
+    });
+
+    // Paragraph fade-in animation
+    panels.forEach((panel) => {
+      const paragraph = panel.querySelector(".para") as HTMLElement;
+      if (paragraph) {
+        gsap.fromTo(
+          paragraph,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: paragraph,
+              start: "left center",
+              end: "right center",
+              scrub: true,
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+    });
+  }
+
+  function setupScrolling() {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    gsap.set(".horizontal-scroll-container", { clearProps: "all" });
+
+    if (!isMobile) {
+      console.log("Desktop mode: Initializing smooth horizontal scroll");
+      initSmoothScroll();
+    } else {
+      console.log("Mobile mode: Using native vertical scroll");
+      // No need to do anything special for mobile, as we're using native scroll
+    }
+  }
+
+  if (
+    document.readyState === "complete" ||
+    document.readyState === "interactive"
+  ) {
+    setupScrolling();
+  } else {
+    window.addEventListener("DOMContentLoaded", setupScrolling);
+  }
+
+  window.addEventListener("resize", setupScrolling);
+</script>

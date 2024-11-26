@@ -1,14 +1,11 @@
 ---
-import Met2 from "@/components/Met2.astro";
 import TabNavigation from "@/components/TabNavigation.astro";
-import Timeline from "@/components/Timeline.astro";
-import Counter from "@/components/Counter.astro";
 import AUSection from "@/components/AUSection.astro";
 import FeatureDiagram from "@/components/FeatureDiagram.astro";
 ---
 
 <section id="panels">
-  <div id="panels-container" style="width: 400%;">
+  <div id="panels-container" style="width: 300%;">
     <article id="panel-1" class="panel full-screen">
       <div class="container">
         <section class="mx-auto max-w-7xl mb-20 p-4" id="nosotros">
@@ -35,8 +32,6 @@ import FeatureDiagram from "@/components/FeatureDiagram.astro";
             </p>
           </div>
           <AUSection />
-          <!-- <Counter /> -->
-          <!-- <Timeline /> -->
         </section>
       </div>
     </article>
@@ -55,7 +50,6 @@ import FeatureDiagram from "@/components/FeatureDiagram.astro";
           </div>
           <hr class="w-52 mx-auto border-t border-gray-300 mb-5" />
           <TabNavigation />
-          <!-- <FeatureDiagram /> -->
         </section>
       </div>
     </article>
@@ -69,16 +63,16 @@ import FeatureDiagram from "@/components/FeatureDiagram.astro";
             <h3
               class="text-5xl md:text-6xl text-white font-semibold text-center mb-5"
             >
-              ¿Que hacemos?
+              ¿Como lo hacemos?
             </h3>
           </div>
           <hr class="w-52 mx-auto border-t border-gray-300 mb-5" />
-          <!-- <TabNavigation /> -->
+
           <FeatureDiagram />
         </section>
       </div>
     </article>
-    <article id="panel-3" class="panel full-screen gradient-green">
+    <!-- <article id="panel-3" class="panel full-screen gradient-green">
       <div class="container">
         <section class="mx-auto max-w-7xl mb-20 p-4" id="nosotros">
           <div class="p-2">
@@ -94,7 +88,7 @@ import FeatureDiagram from "@/components/FeatureDiagram.astro";
           </div>
         </section>
       </div>
-    </article>
+    </article> -->
   </div>
 </section>
 
@@ -227,25 +221,6 @@ import FeatureDiagram from "@/components/FeatureDiagram.astro";
       },
     });
   }
-
-  const paragraph = document.querySelector(".para");
-
-  // Configuración de la animación de opacidad del párrafo
-  gsap.fromTo(
-    paragraph,
-    { opacity: 0 },
-    {
-      opacity: 1,
-      duration: 4,
-      scrollTrigger: {
-        trigger: paragraph,
-        start: "top 90%", // La animación comienza cuando el top llega al 90% del viewport
-        end: "+=300", // La animación finaliza cuando el desplazamiento es de 300px
-        scrub: 3, // La animación se ajusta al desplazamiento de la página
-        markers: true,
-      },
-    }
-  );
 
   function setupGsapForMobile() {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
